@@ -22,15 +22,19 @@
 <script>
 const params = new URLSearchParams(window.location.search);
 
-document.getElementById("nombre").innerText = "Nombre: " + params.get("nombre");
-document.getElementById("dni").innerText = "DNI: " + params.get("dni");
-document.getElementById("telefono").innerText = "Teléfono: " + params.get("telefono");
+function setText(id, label, value) {
+  document.getElementById(id).innerText = label + ": " + (value ? value : "-");
+}
 
-document.getElementById("patente").innerText = "Patente: " + params.get("patente");
-document.getElementById("modelo").innerText = "Modelo: " + params.get("modelo");
+setText("nombre", "Nombre", params.get("nombre"));
+setText("dni", "DNI", params.get("dni"));
+setText("telefono", "Teléfono", params.get("telefono"));
 
-document.getElementById("seguro").innerText = "Aseguradora: " + params.get("seguro");
-document.getElementById("poliza").innerText = "Póliza: " + params.get("poliza");
+setText("patente", "Patente", params.get("patente"));
+setText("modelo", "Modelo", params.get("modelo"));
+
+setText("seguro", "Aseguradora", params.get("seguro"));
+setText("poliza", "Póliza", params.get("poliza"));
 </script>
 
 </body>
