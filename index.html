@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Datos del conductor</title>
+</head>
+<body>
+
+<h2>🚗 Datos del conductor</h2>
+<p id="nombre"></p>
+<p id="dni"></p>
+<p id="telefono"></p>
+
+<h2>🚘 Vehículo</h2>
+<p id="patente"></p>
+<p id="modelo"></p>
+
+<h2>🛡️ Seguro</h2>
+<p id="seguro"></p>
+<p id="poliza"></p>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+
+document.getElementById("nombre").innerText = "Nombre: " + params.get("nombre");
+document.getElementById("dni").innerText = "DNI: " + params.get("dni");
+document.getElementById("telefono").innerText = "Teléfono: " + params.get("telefono");
+
+document.getElementById("patente").innerText = "Patente: " + params.get("patente");
+document.getElementById("modelo").innerText = "Modelo: " + params.get("modelo");
+
+document.getElementById("seguro").innerText = "Aseguradora: " + params.get("seguro");
+document.getElementById("poliza").innerText = "Póliza: " + params.get("poliza");
+</script>
+
+</body>
+</html>
