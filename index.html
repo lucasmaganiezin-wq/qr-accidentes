@@ -27,14 +27,16 @@ function setText(id, label, value) {
   document.getElementById(id).innerText = label + ": " + (value ? value : "-");
 }
 
-setText("nombre", "nombre", params.get("nombre"));
-setText("dni", "dni", params.get("dni"));
-setText("telefono", "teléfono", params.get("telefono"));
-setText("email", "email", params.get("email"));
-setText("patente", "patente", params.get("patente"));
-setText("modelo", "modelo", params.get("modelo"));
-setText("seguro", "seguro", params.get("seguro"));
-setText("poliza", "póliza", params.get("poliza"));
+const params = new URLSearchParams(window.location.search);
+
+document.getElementById("nombre").innerText = params.get("nombre") || "";
+document.getElementById("dni").innerText = params.get("dni") || "";
+document.getElementById("telefono").innerText = params.get("telefono") || "";
+document.getElementById("email").innerText = params.get("email") || "";
+document.getElementById("patente").innerText = params.get("patente") || "";
+document.getElementById("modelo").innerText = params.get("modelo") || "";
+document.getElementById("seguro").innerText = params.get("seguro") || "";
+document.getElementById("poliza").innerText = params.get("poliza") || "";
 </script>
 
 </body>
